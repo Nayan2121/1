@@ -28,7 +28,7 @@ const handleUserAdd = (e) => {
             <Card className="shadow px-4">
               <Card.Body>
                 <div className="mb-3 mt-md-4">
-                  <h2 className="fw-bold mb-2 text-center text-uppercase ">Add User Form11</h2>
+                  <h2 className="fw-bold mb-2 text-center text-uppercase ">Add User Form</h2>
                   <div className="mb-3">
 
                     <Form onSubmit={handleUserAdd}>
