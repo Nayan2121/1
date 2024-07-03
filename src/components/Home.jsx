@@ -36,13 +36,11 @@ export default function Home() {
                         </p>
                     </div>
                     <div>
-                        <Link to="/create">
-                            <button
-                                type="button"
+                        <Link to="/create"
                                 className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
                             >
                                 Add new employee
-                            </button>
+                           
                         </Link>
                     </div>
                 </div>
@@ -51,7 +49,7 @@ export default function Home() {
                         <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
                             <div className="overflow-hidden border border-gray-200 md:rounded-lg">
                                 <table className="min-w-full divide-y divide-gray-200">
-                                    <thead className="bg-gray-50">
+                                    <thead className="bg-gray-100">
                                         <tr>
                                             <th
                                                 scope="col"
@@ -69,6 +67,12 @@ export default function Home() {
                                                 scope="col"
                                                 className="px-4 py-3.5 text-left text-sm font-normal text-gray-700"
                                             >
+                                                Number
+                                            </th>
+                                            <th
+                                                scope="col"
+                                                className="px-4 py-3.5 text-left text-sm font-normal text-gray-700"
+                                            >
                                                 City
                                             </th>
                                             <th
@@ -77,7 +81,6 @@ export default function Home() {
                                             >
                                                 Update
                                             </th>
-                                           
                                         </tr>
                                     </thead>
                                     <tbody className="divide-y divide-gray-200 bg-white">
@@ -94,15 +97,20 @@ export default function Home() {
                                                 <td className="whitespace-nowrap px-12 py-4">
                                                     <div className="text-sm text-gray-900 ">{cvalue.email}</div>
                                                 </td>
+                                                <td className="whitespace-nowrap py-4 px-4">
+                                                    <div className="text-sm text-gray-900 ">{cvalue.phone}</div>
+                                                </td>
                                                 <td className="whitespace-nowrap px-4 py-4">
                                                     <span className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">
                                                         {cvalue.city}
                                                     </span>
                                                 </td>
                                                 <td className="whitespace-nowrap py-4 text-center text-sm font-medium">
-                                                    <a href="#" className='text-white px-4 py-2 rounded-lg bg-blue-500'>
+                                                    <Link className='text-white px-4 py-2 rounded-lg bg-blue-500' to={`/Edit/${cvalue.id}`}>
+                                                    
                                                         Edit
-                                                    </a>
+                                                    
+                                                    </Link>
                                                 </td>
                                                 <td className='whitespace-nowrap py-4 text-sm text-center font-medium'>
                                                     <a onClick={() => handleDelete(cvalue?.id)} href="#" className='text-white px-4 py-2 rounded-lg bg-red-500'>

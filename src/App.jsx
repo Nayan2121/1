@@ -3,6 +3,8 @@ import './App.css'
 import Home from './components/Home'
 import Register from './components/Register'
 import Create from './components/Create'
+import Edit from './components/Edit'
+
 
 function App() {
 
@@ -13,6 +15,7 @@ function App() {
           <Route path="/" element={<Register />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/Create" element={<Create />} />
+          <Route path="/Edit/:id" element={<Edit />} />
         </Routes>
       </BrowserRouter>
     </>
